@@ -18,7 +18,13 @@ function activate(context) {
         // Display a message box to the user
         vscode.window.showInformationMessage('Hello World from ext_test! Good evening');
     });
+    let dispImport = vscode.commands.registerCommand('ext-test.importProblem', () => {
+        // The code you place here will be executed every time your command is executed
+        // Display a message box to the user
+        vscode.window.showInformationMessage('Enter Problem ID');
+    });
     context.subscriptions.push(disposable);
+    context.subscriptions.push(dispImport);
 }
 exports.activate = activate;
 // This method is called when your extension is deactivated

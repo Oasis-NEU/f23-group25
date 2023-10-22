@@ -16,6 +16,10 @@
       {
         "command": "ext-test.helloWorld",
         "title": "Hello World"
+      },
+      {
+        "command": "ext-test.importProblem",
+        "title": "Import Problem"
       }
     ]
   },
@@ -40,6 +44,7 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
-    "@supabase/supabase-js": "^2.38.1"
+    "@supabase/supabase-js": "^2.38.1",
+    "leetcode-api-ts": "^1.1.1"
   }
 }
