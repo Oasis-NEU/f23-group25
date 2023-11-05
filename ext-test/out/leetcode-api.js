@@ -1,7 +1,10 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const leetcode_api_ts_1 = require("leetcode-api-ts");
-const problem_1 = require("leetcode-api-ts/dist/lib/problem");
+const leetcode_api_ts_1 = __importDefault(require("leetcode-api-ts"));
+const problem_1 = __importDefault(require("leetcode-api-ts/dist/lib/problem"));
 const interfaces_1 = require("leetcode-api-ts/dist/utils/interfaces");
 async function fetchLeetcode() {
     // Login

@@ -16,6 +16,10 @@
       {
         "command": "ext-test.helloWorld",
         "title": "Hello World"
+      },
+      {
+        "command": "ext-test.displayLeetCodeQuestions",
+        "title": "displayLeetCodeQuestions"
       }
     ]
   },
