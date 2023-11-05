@@ -1,6 +1,10 @@
 import * as vscode from "vscode";
 import db from "./database";
 
+function writeToFile(question) {
+	
+}
+
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
 
