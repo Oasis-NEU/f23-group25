@@ -1,19 +1,15 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from "vscode";
-import Leetcode from "leetcode-api-ts";
-import Problem from "leetcode-api-ts/dist/lib/problem";
+import db from "./database";
 import { EndPoint, ProblemStatus } from "leetcode-api-ts/dist/utils/interfaces";
 
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
-export async function activate(context: vscode.ExtensionContext) {
+export function activate(context: vscode.ExtensionContext) {
 	
-	const leetcode: Leetcode = await Leetcode.build(
-		"oasisfall2023",
-		"Password1.",
-		EndPoint.US // or EndPoint.CN
-	);
+	const questions = db.questions;
+	
 
 	// Use the console to output diagnostic information (console.log) and errors (console.error)
 	// This line of code will only be executed once when your extension is activated
