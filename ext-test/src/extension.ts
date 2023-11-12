@@ -1,4 +1,5 @@
 import * as vscode from "vscode";
+import * as fs from 'fs';
 import db from "./database";
 import { title } from "process";
 
@@ -42,6 +43,23 @@ function writeToFile(question: {id: number;
   	vscode.workspace.updateWorkspaceFolders(0, currentWorkspaceFolders.length, ...newWorkspaceFolders);
 }
 
+function displayLeetCodeQuestions() {
+
+	const filePath1 = 'f23-group25/ext-test/src/question.txt';
+	const filePath2 = 'f23-group25/ext-test/src/testCode.py';
+	const leetCodeQuestions = fs.readFileSync(filePath1, 'utf-8');
+	const pyCode = fs.readFileSync(filePath2, 'utf-8');
+
+	vscode.window.showInformationMessage('Here are sum questions!');
+	vscode.workspace.openTextDocument({ content: leetCodeQuestions }).then((doc) => {
+		vscode.window.showTextDocument(doc, vscode.ViewColumn.One, true);
+	});
+	vscode.workspace.openTextDocument({ language : 'python', content: pyCode }).then((doc) => {
+		vscode.window.showTextDocument(doc, vscode.ViewColumn.Two, true);
+	});
+	
+}
+
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
 
@@ -73,7 +91,10 @@ export function activate(context: vscode.ExtensionContext) {
 			});
 	});
 
+	let display = vscode.commands.registerCommand('ext-test.displayLeetCodeQuestions', displayLeetCodeQuestions);
+
 	context.subscriptions.push(disposable);
+	context.subscriptions.push(display);
 }
 
 // This method is called when your extension is deactivated
