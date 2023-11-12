@@ -11,26 +11,34 @@ function writeToFile(question: {id: number;
     							example: string;
     							starterCode: string;}) {
 	
-	const directoryName = question.title;
-	const textName = directoryName + '.txt';
-	const codeName = directoryName + '.py';  
+	const directoryName: string = question.title;
+	const textName: string = directoryName + '.txt';
+	const codeName: string = directoryName + '.py';  
 
-	fs.mkdir(directoryName, (err) =>{
+	const dirPath: string = path.join('/Users/michael_p/Documents/LeetTest', directoryName);
+	fs.mkdir(dirPath, (err) => {
 		if (err) {
 			console.error('Error creating the directory:', err);
 		}
 	});
-	const dirPath = path.join(__dirname, directoryName);
 
-	const textPath = path.join(dirPath, textName);
-	const textContent = question.question + "\n\n" + question.example;
-	fs.writeFile(textPath, textContent);
+	const textPath: string = path.join(dirPath, textName);
+	const textContent: string = question.question + "\n\n" + question.example;
+	const txtFile = fs.writeFile(textPath, textContent, (err) => {
+		if (err) {
+		  console.error('Error writing to the file:', err);
+		}
+	});
 
-	const codePath = path.join(dirPath, codeName);
-	fs.writeFile(codePath, question.starterCode);
+	const codePath: string = path.join(dirPath, codeName);
+	const codeFile = fs.writeFile(codePath, question.starterCode, (err) => {
+		if (err) {
+		  console.error('Error writing to the file:', err);
+		}
+	});
 
 	const currentWorkspaceFolders = vscode.workspace.workspaceFolders || [];
-  	const newWorkspaceFolders = [...currentWorkspaceFolders, { uri: vscode.Uri.file(directoryName) }];
+  	const newWorkspaceFolders = [...currentWorkspaceFolders, { uri: vscode.Uri.file(dirPath) }];
   	vscode.workspace.updateWorkspaceFolders(0, currentWorkspaceFolders.length, ...newWorkspaceFolders);
 }
 

@@ -35,19 +35,27 @@ function writeToFile(question) {
     const directoryName = question.title;
     const textName = directoryName + '.txt';
     const codeName = directoryName + '.py';
-    fs.mkdir(directoryName, (err) => {
+    const dirPath = path.join('/Users/michael_p/Documents/LeetTest', directoryName);
+    fs.mkdir(dirPath, (err) => {
         if (err) {
             console.error('Error creating the directory:', err);
         }
     });
-    const dirPath = path.join(__dirname, directoryName);
     const textPath = path.join(dirPath, textName);
     const textContent = question.question + "\n\n" + question.example;
-    fs.writeFile(textPath, textContent);
+    const txtFile = fs.writeFile(textPath, textContent, (err) => {
+        if (err) {
+            console.error('Error writing to the file:', err);
+        }
+    });
     const codePath = path.join(dirPath, codeName);
-    fs.writeFile(codePath, question.starterCode);
+    const codeFile = fs.writeFile(codePath, question.starterCode, (err) => {
+        if (err) {
+            console.error('Error writing to the file:', err);
+        }
+    });
     const currentWorkspaceFolders = vscode.workspace.workspaceFolders || [];
-    const newWorkspaceFolders = [...currentWorkspaceFolders, { uri: vscode.Uri.file(directoryName) }];
+    const newWorkspaceFolders = [...currentWorkspaceFolders, { uri: vscode.Uri.file(dirPath) }];
     vscode.workspace.updateWorkspaceFolders(0, currentWorkspaceFolders.length, ...newWorkspaceFolders);
 }
 // This method is called when your extension is activated
