@@ -1,8 +1,37 @@
 import * as vscode from "vscode";
 import db from "./database";
+import { title } from "process";
 
-function writeToFile(question) {
+const fs = require('fs');
+const path = require('path');
+
+function writeToFile(question: {id: number;
+								title: string;
+								question: string;
+    							example: string;
+    							starterCode: string;}) {
 	
+	const directoryName = question.title;
+	const textName = directoryName + '.txt';
+	const codeName = directoryName + '.py';  
+
+	fs.mkdir(directoryName, (err) =>{
+		if (err) {
+			console.error('Error creating the directory:', err);
+		}
+	});
+	const dirPath = path.join(__dirname, directoryName);
+
+	const textPath = path.join(dirPath, textName);
+	const textContent = question.question + "\n\n" + question.example;
+	fs.writeFile(textPath, textContent);
+
+	const codePath = path.join(dirPath, codeName);
+	fs.writeFile(codePath, question.starterCode);
+
+	const currentWorkspaceFolders = vscode.workspace.workspaceFolders || [];
+  	const newWorkspaceFolders = [...currentWorkspaceFolders, { uri: vscode.Uri.file(directoryName) }];
+  	vscode.workspace.updateWorkspaceFolders(0, currentWorkspaceFolders.length, ...newWorkspaceFolders);
 }
 
 // This method is called when your extension is activated
@@ -28,7 +57,7 @@ export function activate(context: vscode.ExtensionContext) {
 					// You can use the value to fetch the corresponding question from the database
 					const question = db.questions.find((q) => q.id === Number(value));
 					if (question) {
-						vscode.window.showInformationMessage(question.title);
+						writeToFile(question);
 					} else {
 						vscode.window.showErrorMessage("Question not found");
 					}
