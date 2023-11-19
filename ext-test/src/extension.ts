@@ -1,5 +1,4 @@
 import * as vscode from "vscode";
-import * as fs from 'fs';
 import db from "./database";
 import { title } from "process";
 
