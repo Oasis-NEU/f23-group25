@@ -30,25 +30,26 @@ exports.deactivate = exports.activate = void 0;
 const vscode = __importStar(require("vscode"));
 const database_1 = __importDefault(require("./database"));
 const fs_1 = __importDefault(require("fs"));
-const path = require('path');
+const path_1 = __importDefault(require("path"));
 function writeToFile(question) {
     const directoryName = question.title;
     const textName = directoryName + '.txt';
     const codeName = directoryName + '.py';
-    const dirPath = path.join('/Users/michael_p/Documents/LeetTest', directoryName);
+    const codeDir = '';
+    const dirPath = path_1.default.join(codeDir, directoryName);
     fs_1.default.mkdir(dirPath, (err) => {
         if (err) {
             console.error('Error creating the directory:', err);
         }
     });
-    const textPath = path.join(dirPath, textName);
+    const textPath = path_1.default.join(dirPath, textName);
     const textContent = question.question + "\n\n" + question.example;
     const txtFile = fs_1.default.writeFile(textPath, textContent, (err) => {
         if (err) {
             console.error('Error writing to the file:', err);
         }
     });
-    const codePath = path.join(dirPath, codeName);
+    const codePath = path_1.default.join(dirPath, codeName);
     const codeFile = fs_1.default.writeFile(codePath, question.starterCode, (err) => {
         if (err) {
             console.error('Error writing to the file:', err);

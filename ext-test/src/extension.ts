@@ -1,9 +1,9 @@
 import * as vscode from "vscode";
 import db from "./database";
 import fs from 'fs';
+import path from "path";
 import { title } from "process";
 
-const path = require('path');
 
 function writeToFile(question: {id: number;
 								title: string;
@@ -14,8 +14,9 @@ function writeToFile(question: {id: number;
 	const directoryName: string = question.title;
 	const textName: string = directoryName + '.txt';
 	const codeName: string = directoryName + '.py';  
+	const codeDir: string = '';
 
-	const dirPath: string = path.join('/Users/michael_p/Documents/LeetTest', directoryName);
+	const dirPath: string = path.join(codeDir, directoryName);
 	fs.mkdir(dirPath, (err: Error | null) => {
 		if (err) {
 			console.error('Error creating the directory:', err);
