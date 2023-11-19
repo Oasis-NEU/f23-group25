@@ -43,13 +43,13 @@ function writeToFile(question) {
     });
     const textPath = path_1.default.join(dirPath, textName);
     const textContent = question.question + "\n\n" + question.example;
-    const txtFile = fs_1.default.writeFile(textPath, textContent, (err) => {
+    fs_1.default.writeFile(textPath, textContent, (err) => {
         if (err) {
             console.error('Error writing to the file:', err);
         }
     });
     const codePath = path_1.default.join(dirPath, codeName);
-    const codeFile = fs_1.default.writeFile(codePath, question.starterCode, (err) => {
+    fs_1.default.writeFile(codePath, question.starterCode, (err) => {
         if (err) {
             console.error('Error writing to the file:', err);
         }
@@ -80,7 +80,7 @@ function activate(context) {
     // The command has been defined in the package.json file
     // Now provide the implementation of the command with registerCommand
     // The commandId parameter must match the command field in package.json
-    let disposable = vscode.commands.registerCommand("ext-test.helloWorld", () => {
+    let disposable = vscode.commands.registerCommand("ext-test.loadQuestion", () => {
         vscode.window
             .showInputBox({
             prompt: "Enter the ID of the question you want to solve",

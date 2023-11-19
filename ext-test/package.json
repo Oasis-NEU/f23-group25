@@ -14,8 +14,8 @@
   "contributes": {
     "commands": [
       {
-        "command": "ext-test.helloWorld",
-        "title": "Hello World"
+        "command": "ext-test.loadQuestion",
+        "title": "Load Question"
       },
       {
         "command": "ext-test.displayLeetCodeQuestions",
