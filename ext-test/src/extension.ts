@@ -11,13 +11,12 @@ function writeToFile(question: {id: number;
     							example: string;
     							starterCode: string;}) {
 	
-	const directoryName: string = question.title;
-	const textName: string = directoryName + '.txt';
-	const codeName: string = directoryName + '.py';  
-	const codeDir: string = '';
+	const directoryName: string = 'test_cases/' + question.title;
+	const textName: string = question.title + '.txt';
+	const codeName: string = question.title + '.py';
 
-	const dirPath: string = path.join(codeDir, directoryName);
-	fs.mkdir(dirPath, (err: Error | null) => {
+	const dirPath: string = path.join(__dirname, directoryName);
+	fs.mkdir(dirPath, { recursive: true }, (err: Error | null) => {
 		if (err) {
 			console.error('Error creating the directory:', err);
 		}

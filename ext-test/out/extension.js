@@ -32,12 +32,11 @@ const database_1 = __importDefault(require("./database"));
 const fs_1 = __importDefault(require("fs"));
 const path_1 = __importDefault(require("path"));
 function writeToFile(question) {
-    const directoryName = question.title;
-    const textName = directoryName + '.txt';
-    const codeName = directoryName + '.py';
-    const codeDir = '';
-    const dirPath = path_1.default.join(codeDir, directoryName);
-    fs_1.default.mkdir(dirPath, (err) => {
+    const directoryName = 'test_cases/' + question.title;
+    const textName = question.title + '.txt';
+    const codeName = question.title + '.py';
+    const dirPath = path_1.default.join(__dirname, directoryName);
+    fs_1.default.mkdir(dirPath, { recursive: true }, (err) => {
         if (err) {
             console.error('Error creating the directory:', err);
         }
