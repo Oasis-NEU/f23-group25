@@ -28,8 +28,36 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.deactivate = exports.activate = void 0;
 const vscode = __importStar(require("vscode"));
-const fs = __importStar(require("fs"));
 const database_1 = __importDefault(require("./database"));
+const fs = require('fs');
+const path = require('path');
+function writeToFile(question) {
+    const directoryName = question.title;
+    const textName = directoryName + '.txt';
+    const codeName = directoryName + '.py';
+    const dirPath = path.join('/Users/michael_p/Documents/LeetTest', directoryName);
+    fs.mkdir(dirPath, (err) => {
+        if (err) {
+            console.error('Error creating the directory:', err);
+        }
+    });
+    const textPath = path.join(dirPath, textName);
+    const textContent = question.question + "\n\n" + question.example;
+    const txtFile = fs.writeFile(textPath, textContent, (err) => {
+        if (err) {
+            console.error('Error writing to the file:', err);
+        }
+    });
+    const codePath = path.join(dirPath, codeName);
+    const codeFile = fs.writeFile(codePath, question.starterCode, (err) => {
+        if (err) {
+            console.error('Error writing to the file:', err);
+        }
+    });
+    const currentWorkspaceFolders = vscode.workspace.workspaceFolders || [];
+    const newWorkspaceFolders = [...currentWorkspaceFolders, { uri: vscode.Uri.file(dirPath) }];
+    vscode.workspace.updateWorkspaceFolders(0, currentWorkspaceFolders.length, ...newWorkspaceFolders);
+}
 function displayLeetCodeQuestions() {
     const filePath1 = 'f23-group25/ext-test/src/question.txt';
     const filePath2 = 'f23-group25/ext-test/src/testCode.py';
@@ -64,7 +92,7 @@ function activate(context) {
                 // You can use the value to fetch the corresponding question from the database
                 const question = database_1.default.questions.find((q) => q.id === Number(value));
                 if (question) {
-                    vscode.window.showInformationMessage(question.title);
+                    writeToFile(question);
                 }
                 else {
                     vscode.window.showErrorMessage("Question not found");
