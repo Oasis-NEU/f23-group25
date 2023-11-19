@@ -1,8 +1,8 @@
 import * as vscode from "vscode";
 import db from "./database";
+import fs from 'fs';
 import { title } from "process";
 
-const fs = require('fs');
 const path = require('path');
 
 function writeToFile(question: {id: number;
@@ -16,7 +16,7 @@ function writeToFile(question: {id: number;
 	const codeName: string = directoryName + '.py';  
 
 	const dirPath: string = path.join('/Users/michael_p/Documents/LeetTest', directoryName);
-	fs.mkdir(dirPath, (err) => {
+	fs.mkdir(dirPath, (err: Error | null) => {
 		if (err) {
 			console.error('Error creating the directory:', err);
 		}
@@ -24,14 +24,14 @@ function writeToFile(question: {id: number;
 
 	const textPath: string = path.join(dirPath, textName);
 	const textContent: string = question.question + "\n\n" + question.example;
-	const txtFile = fs.writeFile(textPath, textContent, (err) => {
+	const txtFile = fs.writeFile(textPath, textContent, (err: Error | null) => {
 		if (err) {
 		  console.error('Error writing to the file:', err);
 		}
 	});
 
 	const codePath: string = path.join(dirPath, codeName);
-	const codeFile = fs.writeFile(codePath, question.starterCode, (err) => {
+	const codeFile = fs.writeFile(codePath, question.starterCode, (err: Error | null) => {
 		if (err) {
 		  console.error('Error writing to the file:', err);
 		}

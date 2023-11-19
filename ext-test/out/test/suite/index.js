@@ -22,14 +22,17 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.run = void 0;
 const path = __importStar(require("path"));
-const Mocha = __importStar(require("mocha"));
+const mocha_1 = __importDefault(require("mocha"));
 const glob = __importStar(require("glob"));
 function run() {
     // Create the mocha test
-    const mocha = new Mocha({
+    const mocha = new mocha_1.default({
         ui: 'tdd',
         color: true
     });
@@ -46,7 +49,7 @@ function run() {
         testFileStream.on("end", () => {
             try {
                 // Run the mocha test
-                mocha.run(failures => {
+                mocha.run((failures) => {
                     if (failures > 0) {
                         e(new Error(`${failures} tests failed.`));
                     }

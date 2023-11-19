@@ -29,27 +29,27 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.deactivate = exports.activate = void 0;
 const vscode = __importStar(require("vscode"));
 const database_1 = __importDefault(require("./database"));
-const fs = require('fs');
+const fs_1 = __importDefault(require("fs"));
 const path = require('path');
 function writeToFile(question) {
     const directoryName = question.title;
     const textName = directoryName + '.txt';
     const codeName = directoryName + '.py';
     const dirPath = path.join('/Users/michael_p/Documents/LeetTest', directoryName);
-    fs.mkdir(dirPath, (err) => {
+    fs_1.default.mkdir(dirPath, (err) => {
         if (err) {
             console.error('Error creating the directory:', err);
         }
     });
     const textPath = path.join(dirPath, textName);
     const textContent = question.question + "\n\n" + question.example;
-    const txtFile = fs.writeFile(textPath, textContent, (err) => {
+    const txtFile = fs_1.default.writeFile(textPath, textContent, (err) => {
         if (err) {
             console.error('Error writing to the file:', err);
         }
     });
     const codePath = path.join(dirPath, codeName);
-    const codeFile = fs.writeFile(codePath, question.starterCode, (err) => {
+    const codeFile = fs_1.default.writeFile(codePath, question.starterCode, (err) => {
         if (err) {
             console.error('Error writing to the file:', err);
         }
@@ -61,8 +61,8 @@ function writeToFile(question) {
 function displayLeetCodeQuestions() {
     const filePath1 = 'f23-group25/ext-test/src/question.txt';
     const filePath2 = 'f23-group25/ext-test/src/testCode.py';
-    const leetCodeQuestions = fs.readFileSync(filePath1, 'utf-8');
-    const pyCode = fs.readFileSync(filePath2, 'utf-8');
+    const leetCodeQuestions = fs_1.default.readFileSync(filePath1, 'utf-8');
+    const pyCode = fs_1.default.readFileSync(filePath2, 'utf-8');
     vscode.window.showInformationMessage('Here are sum questions!');
     vscode.workspace.openTextDocument({ content: leetCodeQuestions }).then((doc) => {
         vscode.window.showTextDocument(doc, vscode.ViewColumn.One, true);

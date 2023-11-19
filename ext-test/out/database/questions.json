@@ -4,34 +4,209 @@
         "title": "Two Sum",
         "question": "Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.\n\nYou may assume that each input would have exactly one solution, and you may not use the same element twice.\n\nYou can return the answer in any order.",
         "example": "Input: nums = [2,7,11,15], target = 9\nOutput: [0,1]\nExplanation: Because nums[0] + nums[1] == 9, we return [0, 1].",
-        "starterCode": "function twoSum(nums, target) {\n\n}"
+        "starterCode": "def twoSum(nums, target):\n    pass"
     },
     {
         "id": 2,
         "title": "Add Two Numbers",
         "question": "You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.\n\nYou may assume the two numbers do not contain any leading zero, except the number 0 itself.",
         "example": "Input: l1 = [2,4,3], l2 = [5,6,4]\nOutput: [7,0,8]\nExplanation: 342 + 465 = 807.",
-        "starterCode": "function addTwoNumbers(l1, l2) {\n\n}"
+        "starterCode": "def addTwoNumbers(l1, l2):\n    pass"
     },
     {
         "id": 3,
         "title": "Longest Substring Without Repeating Characters",
         "question": "Given a string s, find the length of the longest substring without repeating characters.",
         "example": "Input: s = 'abcabcbb'\nOutput: 3\nExplanation: The answer is 'abc', with the length of 3.",
-        "starterCode": "function lengthOfLongestSubstring(s) {\n\n}"
+        "starterCode": "def lengthOfLongestSubstring(s):\n    pass"
     },
     {
         "id": 4,
-        "title": "Median of Two Sorted Arrays",
+        "title": "Median_of_Two_Sorted_Arrays",
         "question": "Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays.\n\nThe overall run time complexity should be O(log (m+n)).",
         "example": "Input: nums1 = [1,3], nums2 = [2]\nOutput: 2.00000\nExplanation: merged array = [1,2,3] and median is 2.",
-        "starterCode": "function findMedianSortedArrays(nums1, nums2) {\n\n}"
+        "starterCode": "def findMedianSortedArrays(nums1, nums2):\n    pass"
     },
     {
         "id": 5,
         "title": "Longest Palindromic Substring",
         "question": "Given a string s, return the longest palindromic substring in s.",
         "example": "Input: s = 'babad'\nOutput: 'bab'\nNote: 'aba' is also a valid answer.",
-        "starterCode": "function longestPalindrome(s) {\n\n}"
+        "starterCode": "def longestPalindrome(s):\n    pass"
+    },
+    {
+        "id": 6,
+        "title": "ZigZag Conversion",
+        "question": "The string 'PAYPALISHIRING' is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)\n\nP   A   H   N\nA P L S I I G\nY   I   R\n\nAnd then read line by line: 'PAHNAPLSIIGYIR'\n\nWrite the code that will take a string and make this conversion given a number of rows.",
+        "example": "Input: s = 'PAYPALISHIRING', numRows = 3\nOutput: 'PAHNAPLSIIGYIR'",
+        "starterCode": "def convert(s, numRows):\n    pass"
+    },
+    {
+        "id": 7,
+        "title": "Reverse Integer",
+        "question": "Given a signed 32-bit integer x, return x with its digits reversed. If reversing x causes the value to go outside the signed 32-bit integer range [-231, 231 - 1], then return 0.\n\nAssume the environment does not allow you to store 64-bit integers (signed or unsigned).",
+        "example": "Input: x = 123\nOutput: 321",
+        "starterCode": "def reverse(x):\n    pass"
+    },
+    {
+        "id": 8,
+        "title": "Palindrome Number",
+        "question": "Given an integer x, return true if x is palindrome integer.\n\nAn integer is a palindrome when it reads the same backward as forward. For example, 121 is palindrome while 123 is not.",
+        "example": "Input: x = 121\nOutput: true",
+        "starterCode": "def isPalindrome(x):\n    pass"
+    },
+    {
+        "id": 9,
+        "title": "Roman to Integer",
+        "question": "Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.\n\nSymbol       Value\nI             1\nV             5\nX             10\nL             50\nC             100\nD             500\nM             1000\n\nFor example, 2 is written as II in Roman numeral, just two one's added together. 12 is written as XII, which is simply X + II. The number 27 is written as XXVII, which is XX + V + II.\n\nRoman numerals are usually written largest to smallest from left to right. However, the numeral for four is not IIII. Instead, the number four is written as IV. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as IX. There are six instances where subtraction is used:\n\nI can be placed before V (5) and X (10) to make 4 and 9. \nX can be placed before L (50) and C (100) to make 40 and 90. \nC can be placed before D (500) and M (1000) to make 400 and 900.\n\nGiven a roman numeral, convert it to an integer.",
+        "example": "Input: s = 'III'\nOutput: 3",
+        "starterCode": "def romanToInt(s):\n    pass"
+    },
+    {
+        "id": 10,
+        "title": "Valid Parentheses",
+        "question": "Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.\n\nAn input string is valid if:\n\nOpen brackets must be closed by the same type of brackets.\nOpen brackets must be closed in the correct order.",
+        "example": "Input: s = '()[]{}'\nOutput: true",
+        "starterCode": "def isValid(s):\n    pass"
+    },
+    {
+        "id": 11,
+        "title": "Merge Two Sorted Lists",
+        "question": "Merge two sorted linked lists and return it as a sorted list. The list should be made by splicing together the nodes of the first two lists.",
+        "example": "Input: l1 = [1,2,4], l2 = [1,3,4]\nOutput: [1,1,2,3,4,4]",
+        "starterCode": "def mergeTwoLists(l1, l2):\n    pass"
+    },
+    {
+        "id": 12,
+        "title": "Remove Duplicates from Sorted Array",
+        "question": "Given a sorted array nums, remove the duplicates in-place such that each element appears only once and returns the new length.\n\nDo not allocate extra space for another array, you must do this by modifying the input array in-place with O(1) extra memory.",
+        "example": "Input: nums = [1,1,2]\nOutput: 2, nums = [1,2]",
+        "starterCode": "def removeDuplicates(nums):\n    pass"
+    },
+    {
+        "id": 13,
+        "title": "Remove Element",
+        "question": "Given an integer array nums and an integer val, remove all occurrences of val in nums in-place. The relative order of the elements may be changed.\n\nSince it is impossible to change the length of the array in some languages, you must instead have the result be placed in the first part of the array nums. More formally, if there are k elements after removing the duplicates, then the first k elements of nums should hold the final result. It does not matter what you leave beyond the first k elements.",
+        "example": "Input: nums = [3,2,2,3], val = 3\nOutput: 2, nums = [2,2]",
+        "starterCode": "def removeElement(nums, val):\n    pass"
+    },
+    {
+        "id": 14,
+        "title": "Implement strStr()",
+        "question": "Implement strStr().\n\nReturn the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.\n\nClarification:\n\nWhat should we return when needle is an empty string? This is a great question to ask during an interview.\n\nFor the purpose of this problem, we will return 0 when needle is an empty string. This is consistent to C's strstr() and Java's indexOf().",
+        "example": "Input: haystack = 'hello', needle = 'll'\nOutput: 2",
+        "starterCode": "def strStr(haystack, needle):\n    pass"
+    },
+    {
+        "id": 15,
+        "title": "Search Insert Position",
+        "question": "Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.\n\nYou must write an algorithm with O(log n) runtime complexity.",
+        "example": "Input: nums = [1,3,5,6], target = 5\nOutput: 2",
+        "starterCode": "def searchInsert(nums, target):\n    pass"
+    },
+    {
+        "id": 16,
+        "title": "Maximum Subarray",
+        "question": "Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.",
+        "example": "Input: nums = [-2,1,-3,4,-1,2,1,-5,4]\nOutput: 6\nExplanation: [4,-1,2,1] has the largest sum = 6.",
+        "starterCode": "def maxSubArray(nums):\n    pass"
+    },
+    {
+        "id": 17,
+        "title": "Length of Last Word",
+        "question": "Given a string s consisting of some words separated by some number of spaces, return the length of the last word in the string.\n\nA word is a maximal substring consisting of non-space characters only.",
+        "example": "Input: s = 'Hello World'\nOutput: 5",
+        "starterCode": "def lengthOfLastWord(s):\n    pass"
+    },
+    {
+        "id": 18,
+        "title": "Plus One",
+        "question": "Given a non-empty array of decimal digits representing a non-negative integer, increment one to the integer.\n\nThe digits are stored such that the most significant digit is at the head of the list, and each element in the array contains a single digit.\n\nYou may assume the integer does not contain any leading zero, except the number 0 itself.",
+        "example": "Input: digits = [1,2,3]\nOutput: [1,2,4]\nExplanation: The array represents the integer 123.",
+        "starterCode": "def plusOne(digits):\n    pass"
+    },
+    {
+        "id": 19,
+        "title": "Add Binary",
+        "question": "Given two binary strings a and b, return their sum as a binary string.",
+        "example": "Input: a = '11', b = '1'\nOutput: '100'",
+        "starterCode": "def addBinary(a, b):\n    pass"
+    },
+    {
+        "id": 20,
+        "title": "Sqrt(x)",
+        "question": "Given a non-negative integer x, compute and return the square root of x.\n\nSince the return type is an integer, the decimal digits are truncated, and only the integer part of the result is returned.",
+        "example": "Input: x = 4\nOutput: 2",
+        "starterCode": "def mySqrt(x):\n    pass"
+    },
+    {
+        "id": 21,
+        "title": "Climbing Stairs",
+        "question": "You are climbing a staircase. It takes n steps to reach the top.\n\nEach time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?",
+        "example": "Input: n = 2\nOutput: 2\nExplanation: There are two ways to climb to the top.\n1. 1 step + 1 step\n2. 2 steps",
+        "starterCode": "def climbStairs(n):\n    pass"
+    },
+    {
+        "id": 22,
+        "title": "Valid Sudoku",
+        "question": "Determine if a 9 x 9 Sudoku board is valid. Only the filled cells need to be validated according to the following rules:\n\nEach row must contain the digits 1-9 without repetition.\nEach column must contain the digits 1-9 without repetition.\nEach of the nine 3 x 3 sub-boxes of the grid must contain the digits 1-9 without repetition.",
+        "example": "Input: board = [['5','3','.','.','7','.','.','.','.'],['6','.','.','1','9','5','.','.','.'],['.','9','8','.','.','.','.','6','.'],['8','.','.','.','6','.','.','.','3'],['4','.','.','8','.','3','.','.','1'],['7','.','.','.','2','.','.','.','6'],['.','6','.','.','.','.','2','8','.'],['.','.','.','4','1','9','.','.','5'],['.','.','.','.','8','.','.','7','9']]\nOutput: true",
+        "starterCode": "def isValidSudoku(board):\n    pass"
+    },
+    {
+        "id": 23,
+        "title": "Count and Say",
+        "question": "The count-and-say sequence is a sequence of digit strings defined by the recursive formula:\n\ncountAndSay(1) = '1'\ncountAndSay(n) is the way you would 'say' the digit string from countAndSay(n-1), which is then converted into a different digit string.\n\nTo determine how you 'say' a digit string, split it into the minimal number of groups so that each group is a contiguous section all of the same character. Then for each group, say the number of characters, then say the character. To convert the saying into a digit string, replace the counts with a number and concatenate every saying.\n\nFor example, the saying and conversion for digit string '3322251':\n\nGiven a positive integer n, return the nth term of the count-and-say sequence.",
+        "example": "Input: n = 4\nOutput: '1211'\nExplanation:\ncountAndSay(1) = '1'\ncountAndSay(2) = '11'\ncountAndSay(3) = '21'\ncountAndSay(4) = '1211'\nExplanation: The sequence starts with '1'.'\n'1' is read off as 'one 1' or '11'.\n'11' is read off as 'two 1s' or '21'.\n'21' is read off as 'one 2, then one 1' or '1211'.",
+        "starterCode": "def countAndSay(n):\n    pass"
+    },
+    {
+        "id": 24,
+        "title": "Maximum Depth of Binary Tree",
+        "question": "Given the root of a binary tree, return its maximum depth.\n\nA binary tree's maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.",
+        "example": "Input: root = [3,9,20,null,null,15,7]\nOutput: 3",
+        "starterCode": "def maxDepth(root):\n    pass"
+    },
+    {
+        "id": 25,
+        "title": "Same Tree",
+        "question": "Given the roots of two binary trees, write a function to check if they are the same or not.\n\nTwo binary trees are considered the same if they are structurally identical, and the nodes have the same value.",
+        "example": "Input: p = [1,2,3], q = [1,2,3]\nOutput: true",
+        "starterCode": "def isSameTree(p, q):\n    pass"
+    },
+    {
+        "id": 26,
+        "title": "Symmetric Tree",
+        "question": "Given the root of a binary tree, check whether it is a mirror of itself (i.e., symmetric around its center).",
+        "example": "Input: root = [1,2,2,3,4,4,3]\nOutput: true",
+        "starterCode": "def isSymmetric(root):\n    pass"
+    },
+    {
+        "id": 27,
+        "title": "Binary Tree Level Order Traversal",
+        "question": "Given the root of a binary tree, return the level order traversal of its nodes' values. (i.e., from left to right, level by level).",
+        "example": "Input: root = [3,9,20,null,null,15,7]\nOutput: [[3],[9,20],[15,7]]",
+        "starterCode": "def levelOrder(root):\n    pass"
+    },
+    {
+        "id": 28,
+        "title": "Convert Sorted Array to Binary Search Tree",
+        "question": "Given an integer array nums where the elements are sorted in ascending order, convert it to a height-balanced binary search tree.\n\nA height-balanced binary tree is a binary tree in which the depth of the two subtrees of every node never differs by more than one.",
+        "example": "Input: nums = [-10,-3,0,5,9]\nOutput: [0,-3,9,-10,null,5]\nExplanation: [0,-10,5,null,-3,null,9] is also accepted:",
+        "starterCode": "def sortedArrayToBST(nums):\n    pass"
+    },
+    {
+        "id": 29,
+        "title": "Maximum Subarray",
+        "question": "Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.",
+        "example": "Input: nums = [-2,1,-3,4,-1,2,1,-5,4]\nOutput: 6\nExplanation: [4,-1,2,1] has the largest sum = 6.",
+        "starterCode": "def maxSubArray(nums):\n    pass"
+    },
+    {
+        "id": 30,
+        "title": "House Robber",
+        "question": "You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed. All houses at this place are arranged in a circle. That means the first house is the neighbor of the last one. Meanwhile, adjacent houses have a security system connected, and it will automatically contact the police if two adjacent houses were broken into on the same night.\n\nGiven an integer array nums representing the amount of money of each house, return the maximum amount of money you can rob tonight without alerting the police.",
+        "example": "Input: nums = [2,3,2]\nOutput: 3\nExplanation: You cannot rob house 1 (money = 2) and then rob house 3 (money = 2), because they are adjacent houses.",
+        "starterCode": "def rob(nums):\n    pass"
     }
 ]
